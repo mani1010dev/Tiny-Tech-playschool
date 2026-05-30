@@ -6,6 +6,7 @@ import { WhyParents } from "@/components/site/WhyParents";
 import { Programs } from "@/components/site/Programs";
 import { Journey } from "@/components/site/Journey";
 import { Campus } from "@/components/site/Campus";
+import { Development } from "@/components/site/Development";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Gallery } from "@/components/site/Gallery";
 import { Educators } from "@/components/site/Educators";
@@ -46,6 +47,7 @@ function Index() {
       <Programs />
       <Journey />
       <Campus />
+      <Development />
       <Educators />
       <Testimonials />
       <Gallery />
