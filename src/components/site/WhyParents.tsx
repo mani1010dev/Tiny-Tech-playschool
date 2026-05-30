@@ -62,7 +62,6 @@ const tiles = [
     title: "Creative exploration",
     body: "Ateliers for music, painting, clay, and storytelling — every week.",
     accent: "bg-beige",
-    span: "md:col-span-2",
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M12 3a9 9 0 109 9c0-1.5-1-2-2.5-2H17a2 2 0 01-2-2v-1c0-1.5-.5-2.5-2-3z" />
@@ -90,7 +89,7 @@ export function WhyParents() {
           </p>
         </div>
 
-        <div className="grid auto-rows-[180px] grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[220px]">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[250px]">
           {tiles.map((t, i) => (
             <motion.article
               key={t.title}
