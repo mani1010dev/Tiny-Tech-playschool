@@ -7,6 +7,7 @@ const links = [
   { href: "#approach", label: "Approach" },
   { href: "#stories", label: "Stories" },
   { href: "#admissions", label: "Admissions" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {
