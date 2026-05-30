@@ -11,7 +11,7 @@ export function Contact() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-stretch">
           
           {/* Contact Details Column */}
-          <div className="flex flex-col justify-between lg:col-span-5">
+          <div className="flex flex-col justify-between lg:col-span-6">
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Contact & Location</span>
               <h2 className="mt-3 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl text-balance">
@@ -104,23 +104,23 @@ export function Contact() {
           </div>
 
           {/* Map Column */}
-          <div className="lg:col-span-7 flex flex-col">
+          <div className="lg:col-span-6 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex-1 overflow-hidden rounded-[2.5rem] bg-foreground/5 border border-foreground/10 h-[400px] lg:h-auto min-h-[350px] shadow-lg group"
+              className="relative overflow-hidden rounded-[2.5rem] bg-foreground/5 border border-foreground/10 h-[350px] lg:h-[450px] min-h-[300px] shadow-lg group"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0173122366627!2d80.05178138885498!3d12.842157699999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f733118958a1%3A0xc9183d5c39a79f59!2sTiny%20Tech%20play%20school!5e0!3m2!1sen!2sin!4v1780136622502!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5800.0!2d80.05178138885498!3d12.842157699999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f733118958a1%3A0xc9183d5c39a79f59!2sTiny%20Tech%20play%20school!5e0!3m2!1sen!2sin!4v1780136622502!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 h-full w-full opacity-85 transition-all duration-500 group-hover:opacity-100 group-hover:scale-[1.01]"
+                className="absolute inset-0 h-full w-full opacity-85 transition-all duration-500 group-hover:opacity-100"
               />
             </motion.div>
           </div>
