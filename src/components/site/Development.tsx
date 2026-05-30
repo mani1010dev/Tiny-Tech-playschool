@@ -27,10 +27,6 @@ export function Development() {
               Every term we share a developmental portrait — built from observation, not testing.
               Below: average gains across our 2024 cohort.
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-3 max-w-md">
-              <Stat n={1200} suffix="+" label="Alumni" />
-              <Stat n={36} suffix=" countries" label="Family origins" />
-            </div>
           </div>
 
           <div ref={ref} className="lg:col-span-7">

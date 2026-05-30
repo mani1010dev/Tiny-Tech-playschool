@@ -80,19 +80,7 @@ export function Hero() {
                 Explore programs
               </a>
             </div>
-
-            <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-foreground/10 pt-6">
-              {[
-                { k: "1:6", v: "Educator ratio" },
-                { k: "12yr", v: "Of practice" },
-                { k: "98%", v: "Parent renewal" },
-              ].map((s) => (
-                <div key={s.v}>
-                  <dt className="font-display text-3xl">{s.k}</dt>
-                  <dd className="mt-1 text-xs uppercase tracking-widest text-foreground/55">{s.v}</dd>
-                </div>
-              ))}
-            </dl>
+            </div>
           </motion.div>
 
           {/* Image card */}
