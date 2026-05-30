@@ -13,9 +13,11 @@ export function Footer() {
             <p className="mt-6 max-w-sm font-display text-3xl font-light leading-[1.1] tracking-tight text-balance">
               Where curiosity becomes confidence.
             </p>
-            <p className="mt-8 text-sm text-background/60">
-              42 Linden Avenue · Open weekdays 7:30 – 18:00<br />
-              hello@tinytech.school · +1 (415) 555 0192
+            <p className="mt-8 text-sm text-background/60 leading-relaxed">
+              24, Rajaji Street, N.G.O Colony, Guduvancheri,<br />
+              Tamil Nadu, India (Near railway station & bus stand)<br />
+              Open weekdays 7:30 – 18:00<br />
+              <a href="mailto:padmasanmugam@gmail.com" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors">padmasanmugam@gmail.com</a> · <a href="tel:+9108124378478" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors">+91-08124378478</a>
             </p>
           </div>
 

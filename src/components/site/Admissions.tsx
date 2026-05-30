@@ -48,13 +48,50 @@ export function Admissions() {
           transition={{ duration: 0.7 }}
           className="mt-20 grid gap-10 rounded-[2rem] bg-foreground p-10 text-background md:grid-cols-2 md:p-14"
         >
-          <div>
-            <h3 className="font-display text-4xl font-light leading-[1] tracking-tight md:text-5xl text-balance">
-              Come spend a morning with us.
-            </h3>
-            <p className="mt-4 max-w-md text-background/70 text-pretty">
-              Tours run Tuesdays and Thursdays. Bring your child — they are part of the conversation.
-            </p>
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="font-display text-4xl font-light leading-[1] tracking-tight md:text-5xl text-balance">
+                Come spend a morning with us.
+              </h3>
+              <p className="mt-4 max-w-md text-background/70 text-pretty text-sm">
+                Tours run Tuesdays and Thursdays. Bring your child — they are part of the conversation.
+              </p>
+            </div>
+            
+            <div className="mt-8 space-y-6 text-sm text-background/80 border-t border-background/10 pt-8">
+              <div className="flex gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-background/10 text-coral">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2a8 8 0 00-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 00-8-8z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="font-medium text-background font-display tracking-tight">Our Campus</h4>
+                  <p className="mt-1 text-background/70 leading-relaxed">
+                    24, Rajaji Street, N.G.O Colony,<br />
+                    Guduvancheri, Tamil Nadu, India<br />
+                    <span className="text-[12px] opacity-80 italic text-coral">(Near to railway station and bus stand)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-background/10 text-coral">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="font-medium text-background font-display tracking-tight">Get In Touch</h4>
+                  <p className="mt-1 leading-relaxed text-background/70 flex flex-col sm:flex-row sm:gap-2">
+                    <a href="tel:+9108124378478" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors font-medium">+91-08124378478</a>
+                    <span className="hidden sm:inline text-background/30">|</span>
+                    <a href="mailto:padmasanmugam@gmail.com" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors">padmasanmugam@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
           <form className="grid grid-cols-1 gap-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
             <input className="rounded-full border border-background/15 bg-background/5 px-5 py-3 text-sm placeholder:text-background/50 focus:outline-none focus:ring-2 focus:ring-coral" placeholder="Parent name" />
