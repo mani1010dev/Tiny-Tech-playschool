@@ -36,6 +36,33 @@ export function Hero() {
               An inspiring environment where children learn, explore, create, and thrive
               through meaningful experiences — guided by educators who see every child.
             </p>
+
+            {/* CBSE Curriculum & Montessori Highlight */}
+            <div className="mt-8 p-5 rounded-3xl bg-card border border-foreground/5 shadow-[var(--shadow-soft)] max-w-xl">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-coral animate-pulse" />
+                <span className="text-xs uppercase tracking-widest font-semibold text-foreground/60">
+                  CBSE Curriculum · Montessori Method of Teaching
+                </span>
+              </div>
+              <div className="mt-3.5 flex flex-wrap gap-2">
+                {[
+                  { name: "Day Care", bg: "bg-mint/15 text-foreground border-mint/30" },
+                  { name: "Play Group", bg: "bg-sky/15 text-foreground border-sky/30" },
+                  { name: "Pre KG", bg: "bg-gold/15 text-foreground border-gold/30" },
+                  { name: "LKG", bg: "bg-coral/10 text-foreground border-coral/20" },
+                  { name: "UKG", bg: "bg-lavender/15 text-foreground border-lavender/30" }
+                ].map((tag) => (
+                  <span 
+                    key={tag.name} 
+                    className={`inline-flex items-center rounded-xl border px-3 py-1.5 text-xs font-semibold uppercase tracking-wider ${tag.bg} shadow-[var(--shadow-soft)] transition-all duration-300 hover:scale-105`}
+                  >
+                    {tag.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#admissions"

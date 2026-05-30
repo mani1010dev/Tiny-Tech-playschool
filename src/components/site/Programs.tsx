@@ -9,6 +9,7 @@ const programs = [
     img: play,
     age: "Ages 2 – 3",
     title: "Nest",
+    cohort: "Day Care & Play Group",
     desc: "Gentle separation, sensory play, and the first language of friendship.",
     outcomes: ["Self-help routines", "Expressive vocabulary", "Secure attachment"],
     accent: "from-mint/70",
@@ -17,6 +18,7 @@ const programs = [
     img: reading,
     age: "Ages 3 – 4",
     title: "Sprout",
+    cohort: "Pre KG",
     desc: "Stories, songs, and a rich vocabulary that turns curiosity into ideas.",
     outcomes: ["Early literacy", "Imaginative play", "Empathy practice"],
     accent: "from-sky/70",
@@ -25,6 +27,7 @@ const programs = [
     img: explore,
     age: "Ages 4 – 5",
     title: "Roam",
+    cohort: "LKG",
     desc: "Nature-based inquiry. Children become scientists of their own world.",
     outcomes: ["Observation skills", "Outdoor confidence", "Problem solving"],
     accent: "from-gold/70",
@@ -33,6 +36,7 @@ const programs = [
     img: create,
     age: "Ages 5 – 6",
     title: "Atelier",
+    cohort: "UKG",
     desc: "Project-based making — from murals to small inventions and theatre.",
     outcomes: ["Creative voice", "Collaboration", "School readiness"],
     accent: "from-coral/60",
@@ -45,9 +49,9 @@ export function Programs() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Programs</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">CBSE Curriculum & Montessori Method</span>
             <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-              Four years, four <em className="italic text-coral">worlds</em> to grow into.
+              Four levels, four <em className="italic text-coral">worlds</em> to grow into.
             </h2>
           </div>
           <a href="#admissions" className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/15 px-5 py-2.5 text-sm hover:bg-foreground/5">
@@ -83,8 +87,13 @@ export function Programs() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-3xl tracking-tight">{p.title}</h3>
-                <p className="mt-2 text-sm text-foreground/70 text-pretty">{p.desc}</p>
+                <div className="flex flex-col gap-1.5 items-start">
+                  <span className="rounded-full bg-foreground/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-foreground/60 border border-foreground/5">
+                    {p.cohort}
+                  </span>
+                  <h3 className="font-display text-3xl tracking-tight">{p.title}</h3>
+                </div>
+                <p className="mt-2.5 text-sm text-foreground/70 text-pretty">{p.desc}</p>
                 <ul className="mt-5 space-y-1.5 border-t border-foreground/10 pt-4">
                   {p.outcomes.map((o) => (
                     <li key={o} className="flex items-center gap-2 text-sm text-foreground/75">
