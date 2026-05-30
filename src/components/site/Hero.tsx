@@ -80,7 +80,6 @@ export function Hero() {
                 Explore programs
               </a>
             </div>
-            </div>
           </motion.div>
 
           {/* Image card */}
