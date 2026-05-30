@@ -87,8 +87,8 @@ export function Programs() {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex flex-col gap-1.5 items-start">
-                  <span className="rounded-full bg-foreground/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-foreground/60 border border-foreground/5">
+                <div className="flex flex-col gap-2 items-start">
+                  <span className="rounded-full bg-foreground/8 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-foreground/75 border border-foreground/10 shadow-sm">
                     {p.cohort}
                   </span>
                   <h3 className="font-display text-3xl tracking-tight">{p.title}</h3>
