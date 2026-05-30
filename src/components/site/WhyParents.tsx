@@ -5,7 +5,6 @@ const tiles = [
     title: "Safety, by design",
     body: "Secure campus, low ratios, trained first responders, daily wellness checks.",
     accent: "bg-sky/40",
-    span: "md:col-span-2 md:row-span-2",
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
