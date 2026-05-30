@@ -31,13 +31,7 @@ export function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-2 pl-3">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-cream">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 3c3 4 3 8 0 12-3-4-3-8 0-12Z" />
-              <path d="M5 14c3 1 6 1 7 5" />
-              <path d="M19 14c-3 1-6 1-7 5" />
-            </svg>
-          </span>
+          <img src="/tiny.png" alt="Tiny Tech Logo" className="h-8 w-8 rounded-full object-cover ring-1 ring-foreground/10" />
           <span className="font-display text-lg tracking-tight">Tiny Tech</span>
         </a>
         <ul className="hidden items-center gap-1 md:flex">
