@@ -46,14 +46,14 @@ export function Admissions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-20 grid gap-10 rounded-[2rem] bg-foreground p-10 text-background md:grid-cols-2 md:p-14"
+          className="mt-20 grid grid-cols-1 gap-10 rounded-[2rem] bg-foreground p-10 text-background lg:grid-cols-3 md:p-14"
         >
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between h-full">
             <div>
               <h3 className="font-display text-4xl font-light leading-[1] tracking-tight md:text-5xl text-balance">
                 Come spend a morning with us.
               </h3>
-              <p className="mt-4 max-w-md text-background/70 text-pretty text-sm">
+              <p className="mt-4 max-w-sm text-background/70 text-pretty text-sm">
                 Tours run Tuesdays and Thursdays. Bring your child — they are part of the conversation.
               </p>
             </div>
@@ -84,16 +84,29 @@ export function Admissions() {
                 </span>
                 <div>
                   <h4 className="font-medium text-background font-display tracking-tight">Get In Touch</h4>
-                  <p className="mt-1 leading-relaxed text-background/70 flex flex-col sm:flex-row sm:gap-2">
+                  <p className="mt-1 leading-relaxed text-background/70 flex flex-col gap-1">
                     <a href="tel:+9108124378478" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors font-medium">+91-08124378478</a>
-                    <span className="hidden sm:inline text-background/30">|</span>
                     <a href="mailto:padmasanmugam@gmail.com" className="hover:text-background underline decoration-background/25 underline-offset-4 transition-colors">padmasanmugam@gmail.com</a>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <form className="grid grid-cols-1 gap-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+
+          <div className="relative overflow-hidden rounded-[1.5rem] bg-background/5 border border-background/10 h-64 lg:h-auto min-h-[280px] shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] group">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0173122366627!2d80.05178138885498!3d12.842157699999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f733118958a1%3A0xc9183d5c39a79f59!2sTiny%20Tech%20play%20school!5e0!3m2!1sen!2sin!4v1780136622502!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 h-full w-full opacity-75 transition-all duration-500 group-hover:opacity-100 group-hover:scale-[1.03]"
+            />
+          </div>
+
+          <form className="grid grid-cols-1 gap-3 sm:grid-cols-2 h-full content-center" onSubmit={(e) => e.preventDefault()}>
             <input className="rounded-full border border-background/15 bg-background/5 px-5 py-3 text-sm placeholder:text-background/50 focus:outline-none focus:ring-2 focus:ring-coral" placeholder="Parent name" />
             <input type="email" className="rounded-full border border-background/15 bg-background/5 px-5 py-3 text-sm placeholder:text-background/50 focus:outline-none focus:ring-2 focus:ring-coral" placeholder="Email" />
             <input className="rounded-full border border-background/15 bg-background/5 px-5 py-3 text-sm placeholder:text-background/50 focus:outline-none focus:ring-2 focus:ring-coral sm:col-span-2" placeholder="Child's age & preferred date" />
