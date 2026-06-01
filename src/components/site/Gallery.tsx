@@ -9,7 +9,7 @@ const photos = [
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.06 AM (1).jpeg", tag: "Cognitive", title: "Puzzles and Logic Games" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.06 AM (2).jpeg", tag: "Creative", title: "Sensory Fingerpainting" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.07 AM.jpeg", tag: "Social", title: "Collaborative Projects" },
-  { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg", tag: "Adventures", title: "Sandpit Excavators" },
+  { src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg", tag: "Adventures", title: "Sandpit Excavators" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.49.12 AM.jpeg", tag: "Focus", title: "Fine Motor Challenges" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.49.12 AM (1).jpeg", tag: "Exploration", title: "Discovery of Textures" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.49.13 AM.jpeg", tag: "Daily Routine", title: "Joyous Circle Greetings" },
