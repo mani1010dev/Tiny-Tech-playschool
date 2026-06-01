@@ -1,10 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-// Curated Photos (25 WhatsApp JPEGs + 2 Posters)
+// Curated Photos (25 WhatsApp JPEGs)
 const photos = [
-  { src: "/banner/6x4 - 1 copy (2).jpg.jpeg", tag: "Poster", title: "Admissions Open 2026" },
-  { src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg", tag: "Poster", title: "Tiny Tech Campus & Curriculum" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.05 AM.jpeg", tag: "Creative", title: "Artistic Explorations" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.05 AM (1).jpeg", tag: "Interactive", title: "Group Playtimes" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.06 AM.jpeg", tag: "Outdoors", title: "Garden Discoveries" },
@@ -41,16 +39,8 @@ const videos = [
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Video 2026-06-01 at 10.49.21 AM (2).mp4", tag: "Activities", title: "Motor Coordination Exercises" }
 ];
 
-interface BannerItem {
-  title: string;
-  desc: string;
-  accent: string;
-  tags: string[];
-  link?: string;
-}
-
 // Curated Banners / Highlights
-const banners: BannerItem[] = [
+const banners = [
   {
     title: "CBSE Curriculum & Montessori Method",
     desc: "A premium early education roadmap designed to nurture analytical logic, confidence, and self-guided growth from ages 2 to 6.",
@@ -68,13 +58,20 @@ const banners: BannerItem[] = [
     desc: "Open weekdays from 7:30 to 18:00. Extended hours available with quiet rest areas, warm meals, and dedicated after-school activities.",
     accent: "bg-gold/20 border-gold/25 text-foreground",
     tags: ["7:30 - 18:00", "Weekdays Only", "Nutritious Meals", "Quiet Play"]
+  }
+];
+
+// Curated Posters / Banners
+const posters = [
+  {
+    src: "/banner/6x4 - 1 copy (2).jpg.jpeg",
+    tag: "Admissions Open",
+    title: "Tiny Tech Admissions 2026-2027"
   },
   {
-    title: "Admission Brochure & Campus Poster",
-    desc: "Download our official print-ready campus poster and parent handbook to view deep-dive admissions timelines offline.",
-    accent: "bg-mint text-foreground border-mint/25",
-    tags: ["Official Poster PDF", "Print Ready", "Guduvancheri Campus"],
-    link: "/banner/Banner Padma (1).pdf"
+    src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg",
+    tag: "Campaign",
+    title: "Preschool Enrollment Campaign"
   }
 ];
 
@@ -110,10 +107,11 @@ export function Gallery() {
           </div>
           
           {/* Segregated Category Toggle */}
-          <div className="flex rounded-full bg-foreground/5 p-1 backdrop-blur shadow-[var(--shadow-soft)] max-w-sm self-start md:self-end">
+          <div className="flex flex-wrap gap-1 rounded-2xl md:rounded-full bg-foreground/5 p-1 backdrop-blur shadow-[var(--shadow-soft)] max-w-md self-start md:self-end">
             {[
               { id: "photos", label: "Photos Grid" },
               { id: "videos", label: "Videos Grid" },
+              { id: "posters", label: "School Posters" },
               { id: "banners", label: "School Highlights" }
             ].map(tab => (
               <button
@@ -258,7 +256,7 @@ export function Gallery() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 15 }}
               transition={{ duration: 0.4 }}
-              className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-6 md:grid-cols-3"
             >
               {banners.map((bn, i) => (
                 <motion.article
@@ -277,31 +275,83 @@ export function Gallery() {
                     </p>
                   </div>
                   
-                  {/* Decorative Banner Tags & Action */}
-                  <div className="mt-8 flex flex-col gap-4 border-t border-current/10 pt-6">
-                    <div className="flex flex-wrap gap-1.5">
-                      {bn.tags.map(t => (
-                        <span key={t} className="rounded-full bg-current/5 border border-current/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider opacity-95 shadow-sm">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    {bn.link && (
-                      <a
-                        href={bn.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-4 py-2.5 text-xs font-semibold hover:opacity-90 transition duration-300 self-start mt-2 shadow-md cursor-pointer animate-pulse hover:animate-none"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                        </svg>
-                        Download PDF Poster
-                      </a>
-                    )}
+                  {/* Decorative Banner Tags */}
+                  <div className="mt-8 flex flex-wrap gap-1.5 pt-6 border-t border-current/10">
+                    {bn.tags.map(t => (
+                      <span key={t} className="rounded-full bg-current/5 border border-current/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider opacity-95 shadow-sm">
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </motion.article>
               ))}
+            </motion.div>
+          )}
+
+          {/* TAB 4: SEGREGATED POSTERS GRID (Clean rectangular posters & PDF action) */}
+          {activeTab === "posters" && (
+            <motion.div
+              key="posters"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.4 }}
+              className="space-y-12"
+            >
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                {posters.map((post) => (
+                  <motion.figure
+                    key={post.src}
+                    whileHover={{ y: -4 }}
+                    onClick={() => setLightboxItem({ type: "image", ...post })}
+                    className="group relative overflow-hidden rounded-3xl bg-foreground/5 border border-foreground/5 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-float)] transition-shadow cursor-zoom-in aspect-[4/3] w-full"
+                  >
+                    <img 
+                      src={post.src} 
+                      alt={post.title} 
+                      loading="lazy" 
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]" 
+                    />
+                    
+                    {/* Caption Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-5 text-background pointer-events-none">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-coral">{post.tag}</span>
+                      <h4 className="font-display text-lg tracking-tight mt-1 leading-tight font-medium text-white">{post.title}</h4>
+                    </div>
+                  </motion.figure>
+                ))}
+
+                {/* PDF Action Card */}
+                <motion.article
+                  whileHover={{ y: -4 }}
+                  className="flex flex-col justify-between rounded-3xl border border-current/10 bg-gold/10 p-6 md:p-8 min-h-[250px] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-float)] group transition-all duration-300"
+                >
+                  <div className="flex flex-col gap-4">
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold/20 text-gold-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                      </svg>
+                    </span>
+                    <div>
+                      <h4 className="font-display text-2xl font-semibold tracking-tight text-foreground">High-Res Banner PDF</h4>
+                      <p className="mt-2 text-xs text-foreground/75 leading-relaxed">
+                        Download the print-ready, high-resolution vector admissions campaign banner.
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="/banner/Banner Padma (1).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold text-background hover:bg-foreground/95 transition duration-300 self-start shadow-md mt-4 cursor-pointer"
+                  >
+                    View / Download PDF
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </a>
+                </motion.article>
+              </div>
             </motion.div>
           )}
 
