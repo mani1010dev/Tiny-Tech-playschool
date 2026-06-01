@@ -45,6 +45,20 @@ export function Admissions() {
     }
   }, []);
 
+  const getWhatsAppLink = () => {
+    const formattedDate = new Date(tourDate).toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+
+    const textMessage = `Hello Tiny Tech Play School! 🎒\n\nI would like to request a school tour. Here are the details of our inquiry:\n\n📝 *Parent Name:* ${parentName}\n📧 *Email:* ${email}\n📞 *Phone:* ${phone}\n👦 *Child's Name:* ${childName}\n👶 *Child's Age Range:* ${childAge} Years\n🏫 *Program Cohort:* ${program}\n🗓 *Preferred Tour Date:* ${formattedDate}\n💬 *Special Notes:* ${notes.trim() || "None"}\n\nLooking forward to coordinating our visit! Thank you!`;
+
+    const schoolWhatsAppNumber = "9108124378478";
+    return `https://wa.me/${schoolWhatsAppNumber}?text=${encodeURIComponent(textMessage)}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -270,14 +284,29 @@ export function Admissions() {
                   </div>
                   <h4 className="font-display text-3xl tracking-tight text-white font-medium">Tour Request Confirmed!</h4>
                   <p className="mt-3 text-sm text-background/80 max-w-sm leading-relaxed text-pretty">
-                    Thank you, <strong className="text-white">{parentName}</strong>! Your inquiry for <strong className="text-white">{childName}</strong> has been logged in our system. An advisor will reach out to you at <strong className="text-white">{email}</strong> or phone to finalize details.
+                    Thank you, <strong className="text-white">{parentName}</strong>! Your inquiry for <strong className="text-white">{childName}</strong> has been logged in our system. You can now send these details directly to our WhatsApp to speed up confirmation!
                   </p>
-                  <button
-                    onClick={clearForm}
-                    className="mt-8 rounded-full border border-background/25 px-6 py-3 text-xs font-semibold hover:bg-background/10 transition duration-300 cursor-pointer text-white"
-                  >
-                    Submit Another Inquiry
-                  </button>
+                  
+                  <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+                    <a
+                      href={getWhatsAppLink()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] text-white px-6 py-4 text-sm font-semibold hover:bg-[#20ba56] transition duration-300 shadow-lg shadow-green-500/20 hover:scale-[1.02] cursor-pointer w-full sm:w-auto text-center"
+                    >
+                      <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.284 1.503 4.936 1.504 5.428 0 9.848-4.417 9.851-9.85.002-2.632-1.018-5.105-2.871-6.961-1.854-1.855-4.324-2.877-6.953-2.878-5.433 0-9.854 4.418-9.858 9.853-.002 1.777.469 3.511 1.364 5.048L1.936 21.68l4.711-1.237zM17.472 14.382c-.3-.149-1.778-.878-2.046-.977-.267-.099-.462-.149-.657.15-.195.299-.754.95-.925 1.15-.17.198-.341.222-.64.074-.3-.15-1.267-.467-2.414-1.493-.893-.797-1.496-1.782-1.672-2.08-.176-.299-.019-.462.13-.61.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.199.05-.374-.025-.524-.075-.15-.657-1.583-.9-2.171-.236-.569-.476-.491-.657-.5-.183-.008-.393-.01-.603-.01-.21 0-.553.08-.841.393-.288.311-1.1.1.074-1.1 1.075 0 2.22 1.127 2.22 2.392 0 1.266-.1 2.28-.225 2.58-.124.3-.015.462.135.61l.074.074.15.174c.249.279.432.553.541.675.109.123.361.373.743.684.382.311.666.495.952.628.286.133.513.149.771.124.258-.025.867-.282.987-.552.12-.27.12-.502.084-.553-.036-.05-.141-.08-.442-.23z"/>
+                      </svg>
+                      Send Details to WhatsApp
+                    </a>
+                    
+                    <button
+                      onClick={clearForm}
+                      className="rounded-full border border-background/25 px-6 py-4 text-xs font-semibold hover:bg-background/10 transition duration-300 cursor-pointer text-white w-full sm:w-auto text-center"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form className="grid grid-cols-1 gap-5 sm:grid-cols-2" onSubmit={handleSubmit}>

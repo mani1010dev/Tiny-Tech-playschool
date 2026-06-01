@@ -11,6 +11,7 @@ import { Gallery } from "@/components/site/Gallery";
 import { Admissions } from "@/components/site/Admissions";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppWidget } from "@/components/site/WhatsAppWidget";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,6 +51,7 @@ function Index() {
       <Admissions />
       <Contact />
       <Footer />
+      <WhatsAppWidget />
     </main>
   );
 }
