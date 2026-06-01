@@ -66,18 +66,26 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#admissions"
-                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-full bg-[#D23228] text-white px-7 py-3.5 text-sm font-bold shadow-md hover:bg-[#b22d25] transition duration-300 hover:scale-[1.02] cursor-pointer"
               >
-                Book a school tour
-                <svg className="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
+                Admissions Open
               </a>
               <a
                 href="#programs"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition hover:bg-white"
+                className="inline-flex items-center justify-center rounded-full border border-foreground/15 bg-white/40 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/70 hover:border-foreground/25 cursor-pointer"
               >
-                Explore programs
+                Our Programs
+              </a>
+              <a
+                href="tel:+9108124378478"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full border border-foreground/15 bg-white/40 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/70 hover:border-foreground/25 cursor-pointer"
+              >
+                <svg className="h-4.5 w-4.5 text-[#F5BF16]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  <path d="M14.05 2a9 9 0 0 1 8 8" />
+                  <path d="M14.05 6a5 5 0 0 1 4 4" />
+                </svg>
+                +91-08124378478
               </a>
             </div>
           </motion.div>
