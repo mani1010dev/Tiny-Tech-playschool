@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-// Curated Photos (25 WhatsApp JPEGs)
+// Curated Photos (25 WhatsApp JPEGs + 2 Posters)
 const photos = [
+  { src: "/banner/6x4 - 1 copy (2).jpg.jpeg", tag: "Poster", title: "Admissions Open 2026" },
+  { src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg", tag: "Poster", title: "Tiny Tech Campus & Curriculum" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.05 AM.jpeg", tag: "Creative", title: "Artistic Explorations" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.05 AM (1).jpeg", tag: "Interactive", title: "Group Playtimes" },
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Image 2026-06-01 at 10.48.06 AM.jpeg", tag: "Outdoors", title: "Garden Discoveries" },
@@ -39,8 +41,16 @@ const videos = [
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Video 2026-06-01 at 10.49.21 AM (2).mp4", tag: "Activities", title: "Motor Coordination Exercises" }
 ];
 
+interface BannerItem {
+  title: string;
+  desc: string;
+  accent: string;
+  tags: string[];
+  link?: string;
+}
+
 // Curated Banners / Highlights
-const banners = [
+const banners: BannerItem[] = [
   {
     title: "CBSE Curriculum & Montessori Method",
     desc: "A premium early education roadmap designed to nurture analytical logic, confidence, and self-guided growth from ages 2 to 6.",
@@ -58,6 +68,13 @@ const banners = [
     desc: "Open weekdays from 7:30 to 18:00. Extended hours available with quiet rest areas, warm meals, and dedicated after-school activities.",
     accent: "bg-gold/20 border-gold/25 text-foreground",
     tags: ["7:30 - 18:00", "Weekdays Only", "Nutritious Meals", "Quiet Play"]
+  },
+  {
+    title: "Admission Brochure & Campus Poster",
+    desc: "Download our official print-ready campus poster and parent handbook to view deep-dive admissions timelines offline.",
+    accent: "bg-mint text-foreground border-mint/25",
+    tags: ["Official Poster PDF", "Print Ready", "Guduvancheri Campus"],
+    link: "/banner/Banner Padma (1).pdf"
   }
 ];
 
@@ -241,7 +258,7 @@ export function Gallery() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 15 }}
               transition={{ duration: 0.4 }}
-              className="grid gap-6 md:grid-cols-3"
+              className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
             >
               {banners.map((bn, i) => (
                 <motion.article
@@ -260,13 +277,28 @@ export function Gallery() {
                     </p>
                   </div>
                   
-                  {/* Decorative Banner Tags */}
-                  <div className="mt-8 flex flex-wrap gap-1.5 pt-6 border-t border-current/10">
-                    {bn.tags.map(t => (
-                      <span key={t} className="rounded-full bg-current/5 border border-current/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider opacity-95 shadow-sm">
-                        {t}
-                      </span>
-                    ))}
+                  {/* Decorative Banner Tags & Action */}
+                  <div className="mt-8 flex flex-col gap-4 border-t border-current/10 pt-6">
+                    <div className="flex flex-wrap gap-1.5">
+                      {bn.tags.map(t => (
+                        <span key={t} className="rounded-full bg-current/5 border border-current/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider opacity-95 shadow-sm">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    {bn.link && (
+                      <a
+                        href={bn.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-4 py-2.5 text-xs font-semibold hover:opacity-90 transition duration-300 self-start mt-2 shadow-md cursor-pointer animate-pulse hover:animate-none"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                        Download PDF Poster
+                      </a>
+                    )}
                   </div>
                 </motion.article>
               ))}
