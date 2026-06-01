@@ -9,7 +9,6 @@ import { Campus } from "@/components/site/Campus";
 import { Development } from "@/components/site/Development";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Gallery } from "@/components/site/Gallery";
-import { Educators } from "@/components/site/Educators";
 import { Admissions } from "@/components/site/Admissions";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -48,7 +47,6 @@ function Index() {
       <Journey />
       <Campus />
       <Development />
-      <Educators />
       <Testimonials />
       <Gallery />
       <Admissions />
