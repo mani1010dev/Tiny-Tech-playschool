@@ -30,7 +30,7 @@ export function Hero() {
             </span>
             <h1 className="mt-6 font-display text-[clamp(2.75rem,7vw,5.75rem)] font-light leading-[0.95] tracking-[-0.02em] text-balance">
               Where curiosity becomes{" "}
-              <em className="italic text-coral">confidence.</em>
+              <span className="text-coral">confidence.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/70 text-pretty">
               An inspiring environment where children learn, explore, create, and thrive

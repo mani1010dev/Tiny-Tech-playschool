@@ -37,7 +37,7 @@ export function Journey() {
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-background/55">The learning journey</span>
             <h2 className="mt-3 max-w-2xl font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-              Four moments that <em className="italic text-coral">repeat</em>, daily.
+              Four moments that <span className="text-coral">repeat</span>, daily.
             </h2>
           </div>
           <div className="hidden w-64 md:block">

@@ -11,7 +11,7 @@ export function Campus() {
         <div className="mb-14 max-w-3xl">
           <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Campus experience</span>
           <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-            Architecturally calm. <em className="italic text-coral">Quietly alive.</em>
+            Architecturally calm. <span className="text-coral">Quietly alive.</span>
           </h2>
         </div>
 

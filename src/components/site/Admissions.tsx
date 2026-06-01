@@ -154,7 +154,7 @@ export function Admissions() {
         <div className="mb-16 max-w-3xl">
           <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">Admissions</span>
           <h2 className="mt-3 font-display text-5xl font-light leading-[1.1] tracking-tight md:text-7xl text-balance">
-            Four steps from <em className="italic text-coral">curious</em> to confirmed.
+            Four steps from <span className="text-coral">curious</span> to confirmed.
           </h2>
         </div>
 

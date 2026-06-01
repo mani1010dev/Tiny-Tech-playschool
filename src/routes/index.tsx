@@ -6,7 +6,6 @@ import { WhyParents } from "@/components/site/WhyParents";
 import { Programs } from "@/components/site/Programs";
 import { Journey } from "@/components/site/Journey";
 import { Development } from "@/components/site/Development";
-import { Testimonials } from "@/components/site/Testimonials";
 import { Gallery } from "@/components/site/Gallery";
 import { Admissions } from "@/components/site/Admissions";
 import { Contact } from "@/components/site/Contact";
@@ -42,11 +41,10 @@ function Index() {
       <Nav />
       <Hero />
       <Marquee />
-      <WhyParents />
       <Programs />
       <Journey />
       <Development />
-      <Testimonials />
+      <WhyParents />
       <Gallery />
       <Admissions />
       <Contact />

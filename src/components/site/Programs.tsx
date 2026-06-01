@@ -84,7 +84,7 @@ export function Programs() {
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">CBSE Curriculum & Montessori Method</span>
             <h2 className="mt-3 font-display text-5xl font-light leading-[1.1] tracking-tight md:text-6xl text-balance">
-              Five levels, five <em className="italic text-coral">worlds</em> to grow into.
+              Five levels, five <span className="text-coral">worlds</span> to grow into.
             </h2>
           </div>
           <a href="#admissions" className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/15 px-6 py-3 text-xs font-semibold hover:bg-foreground/5 transition cursor-pointer">

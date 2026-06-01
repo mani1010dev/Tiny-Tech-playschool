@@ -17,7 +17,7 @@ export function Faq() {
         <div className="mb-12 text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Questions</span>
           <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-            The things parents <em className="italic text-coral">actually</em> ask.
+            The things parents <span className="text-coral">actually</span> ask.
           </h2>
         </div>
         <ul className="divide-y divide-foreground/10 border-y border-foreground/10">

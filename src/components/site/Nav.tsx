@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "#programs", label: "Programs" },
   { href: "#approach", label: "Approach" },
-  { href: "#stories", label: "Stories" },
   { href: "#admissions", label: "Admissions" },
   { href: "#contact", label: "Contact" },
 ];
@@ -48,12 +47,10 @@ export function Nav() {
         </ul>
         <a
           href="#admissions"
-          className="group relative inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition hover:bg-foreground/90"
+          className="group relative inline-flex items-center gap-2.5 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-foreground/90"
         >
-          Book a tour
-          <svg className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
+          Speak With Us
+          <span className="text-base leading-none transition-transform duration-200 group-hover:translate-x-0.5">›</span>
         </a>
       </nav>
     </motion.header>

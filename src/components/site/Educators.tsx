@@ -16,7 +16,7 @@ export function Educators() {
         <div className="mb-12 max-w-2xl">
           <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Meet our educators</span>
           <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-            People your child will <em className="italic text-coral">remember.</em>
+            People your child will <span className="text-coral">remember.</span>
           </h2>
         </div>
 
@@ -39,7 +39,7 @@ export function Educators() {
                   <span className="text-xs text-foreground/50">0{i + 1}</span>
                 </div>
                 <div className="text-sm text-foreground/60">{t.role}</div>
-                <p className="mt-4 border-t border-foreground/10 pt-4 text-sm italic text-foreground/75">"{t.quote}"</p>
+                <p className="mt-4 border-t border-foreground/10 pt-4 text-sm text-foreground/75">"{t.quote}"</p>
               </div>
             </motion.article>
           ))}

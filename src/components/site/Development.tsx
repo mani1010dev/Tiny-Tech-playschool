@@ -103,9 +103,9 @@ export function Development() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="mb-16 max-w-3xl">
-          <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">Montessori & CBSE Pedagogy</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">Montessori & CBSE-Inspired Learning Approach</span>
           <h2 className="mt-3 font-display text-5xl font-light leading-[1.1] tracking-tight md:text-6xl text-balance">
-            Eight areas of <em className="italic text-coral">focused discovery.</em>
+            Eight areas of <span className="text-coral">focused discovery.</span>
           </h2>
           <p className="mt-4 text-sm text-foreground/70 max-w-2xl leading-relaxed text-pretty">
             Our Montessori-aligned curriculum focuses on eight key developmental pillars, custom-structured to turn innate curiosity into structured school readiness and real-world capability.

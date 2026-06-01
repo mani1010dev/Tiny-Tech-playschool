@@ -80,7 +80,7 @@ export function WhyParents() {
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Why families choose Tiny Tech</span>
             <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-              A foundation built on <em className="italic text-coral">trust</em>, designed for wonder.
+              A foundation built on <span className="text-coral">trust</span>, designed for wonder.
             </h2>
           </div>
           <p className="max-w-sm text-foreground/65 text-pretty">

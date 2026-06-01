@@ -23,7 +23,7 @@ export function Footer() {
             {[
               { h: "School", l: ["Programs", "Approach"] },
               { h: "Family", l: ["Admissions", "Tuition", "Daily journey", "Calendar"] },
-              { h: "Stories", l: ["Journal", "Events", "Press", "Alumni"] },
+              { h: "Gallery", l: ["Photos", "Videos", "Events", "Campus"] },
               { h: "Contact", l: ["Visit us", "Careers", "Instagram", "Newsletter"] },
             ].map((c) => (
               <div key={c.h}>

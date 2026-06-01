@@ -92,7 +92,7 @@ export function Gallery() {
   const loadMoreVideos = () => setVisibleVideos(prev => Math.min(prev + 4, videos.length));
 
   return (
-    <section id="stories" className="relative py-28 bg-background border-t border-foreground/5 overflow-hidden">
+    <section id="gallery" className="relative py-28 bg-background border-t border-foreground/5 overflow-hidden">
       {/* Dynamic Background Accents */}
       <div className="blob -right-32 top-1/4 h-96 w-96 bg-mint/15" />
       <div className="blob -left-32 bottom-1/4 h-96 w-96 bg-coral/10" />
@@ -104,7 +104,7 @@ export function Gallery() {
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">Moments & Highlights</span>
             <h2 className="mt-3 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl text-balance">
-              Captured unedited, <em className="italic text-coral">aligned beautifully.</em>
+              Captured unedited, <span className="text-coral">aligned beautifully.</span>
             </h2>
             <p className="mt-4 max-w-md text-sm text-foreground/65">
               Explore our structured gallery of unedited school photos, videos, and posters, split into clean, segregated rows with identical grid card scaling.

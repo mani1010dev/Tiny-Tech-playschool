@@ -15,7 +15,7 @@ export function Contact() {
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Contact & Location</span>
               <h2 className="mt-3 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl text-balance">
-                We'd love to <em className="italic text-coral">connect</em> with you.
+                We'd love to <span className="text-coral">connect</span> with you.
               </h2>
               <p className="mt-6 max-w-md text-foreground/65 text-pretty leading-relaxed text-sm">
                 Whether you have questions about admissions, our curriculum, or want to schedule a visit, feel free to reach out or drop by. We are located near key transit points for your convenience.
