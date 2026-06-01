@@ -39,6 +39,25 @@ const videos = [
   { src: "/WhatsApp Unknown 2026-06-01 at 10.51.09 AM/WhatsApp Video 2026-06-01 at 10.49.21 AM (2).mp4", tag: "Activities", title: "Motor Coordination Exercises" }
 ];
 
+// Curated Banners / Official Posters
+const posters = [
+  { 
+    src: "/banner/6x4 - 1 copy (2).jpg.jpeg", 
+    tag: "Admission", 
+    title: "Preschool Enrollment Poster" 
+  },
+  { 
+    src: "/banner/Banner Padma (1)-1.png", 
+    tag: "Montessori", 
+    title: "Educational Method Overview" 
+  },
+  { 
+    src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg", 
+    tag: "Curriculum", 
+    title: "Tiny Tech CBSE Curriculum" 
+  }
+];
+
 // Curated Banners / Highlights
 const banners = [
   {
@@ -58,20 +77,6 @@ const banners = [
     desc: "Open weekdays from 7:30 to 18:00. Extended hours available with quiet rest areas, warm meals, and dedicated after-school activities.",
     accent: "bg-gold/20 border-gold/25 text-foreground",
     tags: ["7:30 - 18:00", "Weekdays Only", "Nutritious Meals", "Quiet Play"]
-  }
-];
-
-// Curated Posters / Banners
-const posters = [
-  {
-    src: "/banner/6x4 - 1 copy (2).jpg.jpeg",
-    tag: "Admissions Open",
-    title: "Tiny Tech Admissions 2026-2027"
-  },
-  {
-    src: "/banner/WhatsApp Image 2026-06-01 at 10.48.07 AM (1).jpeg",
-    tag: "Campaign",
-    title: "Preschool Enrollment Campaign"
   }
 ];
 
@@ -97,27 +102,27 @@ export function Gallery() {
         {/* Header Section */}
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">Moments & Highlights</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">Moments & Highlights</span>
             <h2 className="mt-3 font-display text-5xl font-light leading-[1.05] tracking-tight md:text-6xl text-balance">
               Captured unedited, <em className="italic text-coral">aligned beautifully.</em>
             </h2>
             <p className="mt-4 max-w-md text-sm text-foreground/65">
-              Explore our structured gallery of unedited school photos and videos, split into clean, segregated rows with identical grid card scaling.
+              Explore our structured gallery of unedited school photos, videos, and posters, split into clean, segregated rows with identical grid card scaling.
             </p>
           </div>
           
-          {/* Segregated Category Toggle */}
-          <div className="flex flex-wrap gap-1 rounded-2xl md:rounded-full bg-foreground/5 p-1 backdrop-blur shadow-[var(--shadow-soft)] max-w-md self-start md:self-end">
+          {/* Segregated Category Toggle - Responsive Flex Wrap */}
+          <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-end gap-1.5 rounded-[1.5rem] md:rounded-full bg-foreground/5 p-1 backdrop-blur shadow-[var(--shadow-soft)] max-w-xl self-start md:self-end">
             {[
               { id: "photos", label: "Photos Grid" },
               { id: "videos", label: "Videos Grid" },
-              { id: "posters", label: "School Posters" },
+              { id: "posters", label: "Official Posters" },
               { id: "banners", label: "School Highlights" }
             ].map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition duration-300 ${
+                className={`relative rounded-full px-4.5 py-2.5 text-xs font-semibold tracking-wide transition duration-300 cursor-pointer ${
                   activeTab === tab.id ? "bg-foreground text-background shadow-md" : "text-foreground/75 hover:text-foreground"
                 }`}
               >
@@ -168,7 +173,7 @@ export function Gallery() {
                 <div className="flex justify-center mt-8">
                   <button 
                     onClick={loadMorePhotos}
-                    className="group inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-2.5 text-xs font-semibold hover:bg-foreground/5 transition duration-300"
+                    className="group inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-2.5 text-xs font-semibold hover:bg-foreground/5 transition duration-300 cursor-pointer"
                   >
                     Load More Photos
                     <svg className="h-3.5 w-3.5 transition duration-300 group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -236,7 +241,7 @@ export function Gallery() {
                 <div className="flex justify-center mt-8">
                   <button 
                     onClick={loadMoreVideos}
-                    className="group inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-2.5 text-xs font-semibold hover:bg-foreground/5 transition duration-300"
+                    className="group inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-2.5 text-xs font-semibold hover:bg-foreground/5 transition duration-300 cursor-pointer"
                   >
                     Load More Videos
                     <svg className="h-3.5 w-3.5 transition duration-300 group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -248,7 +253,43 @@ export function Gallery() {
             </motion.div>
           )}
 
-          {/* TAB 3: HIGHLIGHT BANNERS (Dedicated School Banners, Same Size) */}
+          {/* TAB 3: SEGREGATED POSTERS GRID (Premium high-aspect ratio cards, Same Size) */}
+          {activeTab === "posters" && (
+            <motion.div
+              key="posters"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 15 }}
+              transition={{ duration: 0.4 }}
+              className="space-y-12"
+            >
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                {posters.map((post) => (
+                  <motion.figure
+                    key={post.src}
+                    whileHover={{ y: -6 }}
+                    onClick={() => setLightboxItem({ type: "image", ...post })}
+                    className="group relative overflow-hidden rounded-3xl bg-foreground/5 border border-foreground/5 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-float)] transition-all duration-300 cursor-zoom-in aspect-[4/3] w-full"
+                  >
+                    <img 
+                      src={post.src} 
+                      alt={post.title} 
+                      loading="lazy" 
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" 
+                    />
+                    
+                    {/* Caption Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-5 text-background pointer-events-none">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-coral">{post.tag}</span>
+                      <h4 className="font-display text-lg tracking-tight mt-1 leading-tight font-medium text-white">{post.title}</h4>
+                    </div>
+                  </motion.figure>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* TAB 4: HIGHLIGHT BANNERS (Dedicated School Banners, Same Size) */}
           {activeTab === "banners" && (
             <motion.div
               key="banners"
@@ -288,73 +329,6 @@ export function Gallery() {
             </motion.div>
           )}
 
-          {/* TAB 4: SEGREGATED POSTERS GRID (Clean rectangular posters & PDF action) */}
-          {activeTab === "posters" && (
-            <motion.div
-              key="posters"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 15 }}
-              transition={{ duration: 0.4 }}
-              className="space-y-12"
-            >
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-                {posters.map((post) => (
-                  <motion.figure
-                    key={post.src}
-                    whileHover={{ y: -4 }}
-                    onClick={() => setLightboxItem({ type: "image", ...post })}
-                    className="group relative overflow-hidden rounded-3xl bg-foreground/5 border border-foreground/5 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-float)] transition-shadow cursor-zoom-in aspect-[4/3] w-full"
-                  >
-                    <img 
-                      src={post.src} 
-                      alt={post.title} 
-                      loading="lazy" 
-                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]" 
-                    />
-                    
-                    {/* Caption Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-5 text-background pointer-events-none">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-coral">{post.tag}</span>
-                      <h4 className="font-display text-lg tracking-tight mt-1 leading-tight font-medium text-white">{post.title}</h4>
-                    </div>
-                  </motion.figure>
-                ))}
-
-                {/* PDF Action Card */}
-                <motion.article
-                  whileHover={{ y: -4 }}
-                  className="flex flex-col justify-between rounded-3xl border border-current/10 bg-gold/10 p-6 md:p-8 min-h-[250px] shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-float)] group transition-all duration-300"
-                >
-                  <div className="flex flex-col gap-4">
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold/20 text-gold-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                      </svg>
-                    </span>
-                    <div>
-                      <h4 className="font-display text-2xl font-semibold tracking-tight text-foreground">High-Res Banner PDF</h4>
-                      <p className="mt-2 text-xs text-foreground/75 leading-relaxed">
-                        Download the print-ready, high-resolution vector admissions campaign banner.
-                      </p>
-                    </div>
-                  </div>
-                  <a
-                    href="/banner/Banner Padma (1).pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold text-background hover:bg-foreground/95 transition duration-300 self-start shadow-md mt-4 cursor-pointer"
-                  >
-                    View / Download PDF
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                  </a>
-                </motion.article>
-              </div>
-            </motion.div>
-          )}
-
         </AnimatePresence>
       </div>
 
@@ -371,7 +345,7 @@ export function Gallery() {
             {/* Close Button */}
             <button 
               onClick={() => setLightboxItem(null)}
-              className="absolute top-6 right-6 z-10 grid h-12 w-12 place-items-center rounded-full glass-dark border border-white/20 text-white hover:bg-white/10 transition-colors"
+              className="absolute top-6 right-6 z-10 grid h-12 w-12 place-items-center rounded-full glass-dark border border-white/20 text-white hover:bg-white/10 transition-colors cursor-pointer"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M18 6L6 18M6 6l12 12" />
