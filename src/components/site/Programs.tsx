@@ -1,65 +1,99 @@
 import { motion } from "framer-motion";
-import reading from "@/assets/program-reading.jpg";
-import play from "@/assets/program-play.jpg";
-import explore from "@/assets/program-explore.jpg";
-import create from "@/assets/program-create.jpg";
 
 const programs = [
   {
-    img: play,
-    age: "Ages 2 – 3",
-    title: "Nest",
-    cohort: "Day Care & Play Group",
-    desc: "Gentle separation, sensory play, and the first language of friendship.",
-    outcomes: ["Self-help routines", "Expressive vocabulary", "Secure attachment"],
-    accent: "from-mint/70",
+    title: "Playgroup",
+    age: "2.5 – 3 YEARS",
+    desc: "Introduction to the Montessori environment and basic social interaction.",
+    bgColor: "bg-[#FDFBF2]", // Pale yellow-cream
+    iconBg: "bg-[#F5BF16]",   // Yellow
+    icon: (
+      <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+        <path d="M12 2a2.5 2.5 0 0 1 2 2" />
+      </svg>
+    )
   },
   {
-    img: reading,
-    age: "Ages 3 – 4",
-    title: "Sprout",
-    cohort: "Pre KG",
-    desc: "Stories, songs, and a rich vocabulary that turns curiosity into ideas.",
-    outcomes: ["Early literacy", "Imaginative play", "Empathy practice"],
-    accent: "from-sky/70",
+    title: "Nursery",
+    age: "3 – 4 YEARS",
+    desc: "Nurturing essential life skills, language acquisition, and sensorial exploration.",
+    bgColor: "bg-[#F2F5FE]", // Pale blue-lavender
+    iconBg: "bg-[#2D5CC3]",   // Rich Blue
+    icon: (
+      <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <circle cx="9" cy="9.5" r="1" fill="currentColor" />
+        <circle cx="15" cy="9.5" r="1" fill="currentColor" />
+      </svg>
+    )
   },
   {
-    img: explore,
-    age: "Ages 4 – 5",
-    title: "Roam",
-    cohort: "LKG",
-    desc: "Nature-based inquiry. Children become scientists of their own world.",
-    outcomes: ["Observation skills", "Outdoor confidence", "Problem solving"],
-    accent: "from-gold/70",
+    title: "LKG / Mont I",
+    age: "4 – 5 YEARS",
+    desc: "Developing foundational literacy, mathematical concepts, and independence.",
+    bgColor: "bg-[#FDF2F0]", // Pale rose-coral
+    iconBg: "bg-[#C32D25]",   // Crimson Red
+    icon: (
+      <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      </svg>
+    )
   },
   {
-    img: create,
-    age: "Ages 5 – 6",
-    title: "Atelier",
-    cohort: "UKG",
-    desc: "Project-based making — from murals to small inventions and theatre.",
-    outcomes: ["Creative voice", "Collaboration", "School readiness"],
-    accent: "from-coral/60",
+    title: "UKG / Mont II",
+    age: "5 – 6 YEARS",
+    desc: "Advanced communication, problem-solving, and preparation for primary education.",
+    bgColor: "bg-[#FDFBF2]", // Pale yellow-cream
+    iconBg: "bg-gradient-to-br from-[#D99A1C] to-[#4F596F]", // Gold-grey gradient
+    icon: (
+      <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+      </svg>
+    )
   },
+  {
+    title: "Day Care",
+    age: "3 YEARS & ABOVE",
+    desc: "Safe and engaging environment focusing on social development and structured play.",
+    bgColor: "bg-[#F2F5FE]", // Pale blue-lavender
+    iconBg: "bg-[#1E40AF]",   // Dark Blue
+    icon: (
+      <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+      </svg>
+    )
+  }
 ];
 
 export function Programs() {
   return (
-    <section id="programs" className="relative py-28">
+    <section id="programs" className="relative py-28 bg-background overflow-hidden">
+      <div className="blob -left-32 top-1/4 h-96 w-96 bg-gold/10" />
+      <div className="blob -right-32 bottom-1/4 h-96 w-96 bg-coral/10" />
+
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55">CBSE Curriculum & Montessori Method</span>
-            <h2 className="mt-3 font-display text-5xl font-light leading-[1] tracking-tight md:text-6xl text-balance">
-              Four levels, four <em className="italic text-coral">worlds</em> to grow into.
+            <span className="text-xs uppercase tracking-[0.2em] text-foreground/55 font-semibold">CBSE Curriculum & Montessori Method</span>
+            <h2 className="mt-3 font-display text-5xl font-light leading-[1.1] tracking-tight md:text-6xl text-balance">
+              Five levels, five <em className="italic text-coral">worlds</em> to grow into.
             </h2>
           </div>
-          <a href="#admissions" className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/15 px-5 py-2.5 text-sm hover:bg-foreground/5">
-            See full curriculum →
+          <a href="#admissions" className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/15 px-6 py-3 text-xs font-semibold hover:bg-foreground/5 transition cursor-pointer">
+            Request full curriculum roadmap →
           </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Centered responsive flex-wrap grid */}
+        <div className="flex flex-wrap justify-center gap-8">
           {programs.map((p, i) => (
             <motion.article
               key={p.title}
@@ -67,42 +101,37 @@ export function Programs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-3xl bg-card ring-1 ring-foreground/5 hover:shadow-[var(--shadow-float)] transition-shadow"
+              className={`flex flex-col justify-between rounded-[2.25rem] p-8 md:p-9 w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] shadow-[0_8px_30px_rgba(40,30,20,0.02)] border border-foreground/5 hover:shadow-[0_20px_50px_rgba(40,30,20,0.06)] hover:-translate-y-1.5 transition-all duration-500 group ${p.bgColor}`}
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={p.img}
-                  alt={`${p.title} program`}
-                  loading="lazy"
-                  width={1200}
-                  height={1400}
-                  className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${p.accent} via-transparent to-transparent opacity-60 mix-blend-multiply`} />
-                <div className="absolute inset-x-4 top-4 flex items-center justify-between">
-                  <span className="rounded-full bg-white/85 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">{p.age}</span>
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-white/85 text-foreground backdrop-blur transition group-hover:rotate-45">
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M9 7h8v8" /></svg>
-                  </span>
+              <div>
+                {/* Squircle Icon Container */}
+                <div className={`w-16 h-16 rounded-[1.25rem] flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105 ${p.iconBg}`}>
+                  {p.icon}
                 </div>
+
+                <h3 className="font-sans text-[1.65rem] font-bold text-[#1F2937] tracking-tight mt-7 leading-tight">
+                  {p.title}
+                </h3>
+                
+                <p className="text-[11px] font-bold tracking-wider text-[#9CA3AF] uppercase mt-1">
+                  {p.age}
+                </p>
+
+                <p className="mt-4 text-[14.5px] text-[#4B5563] leading-relaxed text-pretty flex-grow">
+                  {p.desc}
+                </p>
               </div>
-              <div className="p-6">
-                <div className="flex flex-col gap-2 items-start">
-                  <span className="rounded-full bg-foreground/8 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-foreground/75 border border-foreground/10 shadow-sm">
-                    {p.cohort}
-                  </span>
-                  <h3 className="font-display text-3xl tracking-tight">{p.title}</h3>
-                </div>
-                <p className="mt-2.5 text-sm text-foreground/70 text-pretty">{p.desc}</p>
-                <ul className="mt-5 space-y-1.5 border-t border-foreground/10 pt-4">
-                  {p.outcomes.map((o) => (
-                    <li key={o} className="flex items-center gap-2 text-sm text-foreground/75">
-                      <span className="h-1 w-1 rounded-full bg-coral" />
-                      {o}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+              {/* Crimson CTA Button */}
+              <a
+                href="#admissions"
+                className="mt-8 rounded-xl bg-[#D23228] text-white py-3.5 text-sm font-semibold hover:bg-[#b22d25] transition duration-300 w-full flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:scale-[1.015]"
+              >
+                Enquire Now
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </motion.article>
           ))}
         </div>
