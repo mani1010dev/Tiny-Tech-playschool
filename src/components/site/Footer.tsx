@@ -21,7 +21,7 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-8 md:col-span-7 md:grid-cols-4">
             {[
-              { h: "School", l: ["Programs", "Approach", "Campus"] },
+              { h: "School", l: ["Programs", "Approach"] },
               { h: "Family", l: ["Admissions", "Tuition", "Daily journey", "Calendar"] },
               { h: "Stories", l: ["Journal", "Events", "Press", "Alumni"] },
               { h: "Contact", l: ["Visit us", "Careers", "Instagram", "Newsletter"] },
