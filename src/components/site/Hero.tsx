@@ -77,7 +77,9 @@ export function Hero() {
                 Our Programs
               </a>
               <a
-                href="tel:+9108124378478"
+                href="https://wa.me/9108124378478?text=Hello%20Tiny%20Tech%20Play%20School!%20🎒%20I'm%20interested%20in%20learning%20more%20about%20your%20preschool%20curriculum%20and%20enrolling%20my%20child.%20Could%20you%20please%20share%20more%20details?"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 rounded-full border border-foreground/15 bg-white/40 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/70 hover:border-foreground/25 cursor-pointer"
               >
                 <svg className="h-4.5 w-4.5 text-[#F5BF16]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
